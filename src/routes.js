@@ -6,8 +6,6 @@ const { authMiddleware } = require('./middleware')
 
 const router = express.Router()
 
-
-
 router.get('/tools', authMiddleware, ToolsController.index)
 router.post('/tools', authMiddleware, ToolsController.store)
 router.delete('/tools/:toolsId', ToolsController.delete, authMiddleware, authMiddleware)
