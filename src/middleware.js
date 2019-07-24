@@ -3,13 +3,16 @@ const { isAuthenticated } = require('./services/auth')
 
 
 authMiddleware = (req, res, next) => {
-  const token = req.headers.authorization.split(' ')[1]
+  let token = null
+  if ('authorization' in req.headers) {
+    token = req.headers.authorization.split(' ')[1]
+  }
 
   if (isAuthenticated(token) === null) {
     return res
       .status(400)
       .json({
-        message: "Token not provided"
+        message: "Must be authenticated"
       })
   }
 
