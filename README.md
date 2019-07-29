@@ -101,9 +101,28 @@ Parâmetros:
 
 ## Tool [/tools/{id}]
 
-Parâmetros:
+- Parâmetros:
 
-- id - o id da Tool
+    - _id
+
++ Response 200 (application/json)
+
+        [
+            {
+                "_id": "5be353b5e7179a33cc154107",
+                "title": "fastify",
+                "link": "https://www.fastify.io/",
+                "description": "Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.",
+                "tags": [
+                    "web",
+                    "framework",
+                    "node",
+                    "http2",
+                    "https",
+                    "localhost"
+                ]
+            }
+        ]
 
 ### Deleta uma tool [DELETE]
 
